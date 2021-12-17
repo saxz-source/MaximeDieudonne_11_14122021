@@ -1,0 +1,17 @@
+.locationInfos {
+    display: flex;
+    justify-content:space-between ;
+    margin-bottom: 1.6rem;
+}
+
+.locationInfos h1 {
+    display: flex;
+    justify-content:space-between ;
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.localisation {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}

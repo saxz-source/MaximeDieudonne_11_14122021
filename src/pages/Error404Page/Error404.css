@@ -1,0 +1,15 @@
+.errorNumber {
+    text-align: center;
+    font-size: 18rem;
+}
+
+.errorSentence {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 5rem;
+}
+
+.errorBackLink {
+    display: block;
+    text-align: center;
+}

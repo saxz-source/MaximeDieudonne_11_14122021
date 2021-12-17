@@ -1,0 +1,13 @@
+.mainNav{
+    display: flex;
+    align-items: center;
+}
+
+.navItem {
+    font-size: 1.5rem;
+    margin-left: 1.75rem;
+}
+
+.active {
+    text-decoration: underline;
+}

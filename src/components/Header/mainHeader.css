@@ -1,0 +1,9 @@
+.mainHeader {
+    display: flex;
+    justify-content: space-between;
+    padding : 2.5rem 6.25rem 0;
+}
+
+.headerLogo {
+    height: 4.25rem;
+}

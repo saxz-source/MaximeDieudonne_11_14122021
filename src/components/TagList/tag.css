@@ -1,0 +1,19 @@
+.tagList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.tag {
+    background-color: #ff6060;
+    font-size: 0.9rem;
+    min-width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    margin-right: 0.75rem;
+}

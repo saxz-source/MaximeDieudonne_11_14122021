@@ -1,0 +1,39 @@
+.galleryContainer {
+    height: 415px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 1.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.galleryIndicator {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 48%;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.arrowRight {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 40%;
+    height: 5rem;
+    width: 2.9rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.arrowLeft {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 40%;
+    height: 5rem;
+    width: 2.9rem;
+    z-index: 2;
+    cursor: pointer;
+}

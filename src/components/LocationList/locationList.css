@@ -1,0 +1,45 @@
+.locationList {
+   padding: 2rem;
+    background: #F7F7F7;
+    border-radius: 25px;
+    /* display: grid;
+  grid-template-columns: auto auto auto;
+  align-content: center; */
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding : 0.9375rem;
+}
+
+.locationItem {
+    border-radius: 10px;
+    width: 21rem;
+    height: 21rem;
+    position : relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin : 1.875rem;
+}
+
+.locationItemFilter {
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    background:linear-gradient(to bottom, rgba(255, 96, 96, 0.1) ,  rgba(255, 96, 96, 0.2) 79% ,rgba(255, 96, 96, 1) 80% ) ;
+    z-index: 1;
+    
+}
+
+.locationTitle {
+    color : white;
+  
+    position: absolute;
+    padding : 1rem;
+    bottom : 0;
+    left : 0;
+    z-index: 2;
+}

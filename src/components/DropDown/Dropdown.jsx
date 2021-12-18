@@ -6,7 +6,7 @@ export default class Dropdown extends Component {
         super(props);
         this.text = props.text;
         this.title = props.title;
-        this.state = { open: false };
+        this.state = { open: false, pageFrom: props.pageFrom };
     }
 
     /**
@@ -17,6 +17,16 @@ export default class Dropdown extends Component {
         this.setState({ open: !this.state.open });
     }
 
+    /**
+     * Define the style for the element according to the page they're shown
+     * @returns {{fontSize: string, lineHeight : string}}
+     */
+    getTypoStyle() {
+        return this.state.pageFrom === "location"
+            ? { fontSize: "1.1rem", lineHeight: "1.6rem" }
+            : { fontSize: "1.5rem", lineHeight: "2.2rem" };
+    }
+
     render() {
         return (
             <section className="dropdownContainer">
@@ -24,7 +34,7 @@ export default class Dropdown extends Component {
                     className="dropdownHeader"
                     onClick={() => this.handleOpening()}
                 >
-                    <h2> {this.title} </h2>
+                    <h2 style={this.getTypoStyle()}> {this.title} </h2>
                     <img
                         src="../assets/arrow.svg"
                         className="dropdownArrow"
@@ -39,13 +49,24 @@ export default class Dropdown extends Component {
                 </div>
                 <div
                     className="dropdownContent"
-                    style={{
-                        display: !this.state.open ? "none" : "block",
-                    }}
+                    style={
+                        ({
+                            display: !this.state.open ? "none" : "block",
+                        },
+                        this.getTypoStyle())
+                    }
                 >
                     {Array.isArray(this.text)
-                        ? this.text.map((item,index) => {
-                              return <p key={item+index}>{item}</p>;
+                        ? this.text.map((item, index) => {
+                              return (
+                                  <p
+                                      key={item + index}
+                                      className="dropDownItem"
+                                      style={this.getTypoStyle()}
+                                  >
+                                      {item}
+                                  </p>
+                              );
                           })
                         : this.text}
                 </div>

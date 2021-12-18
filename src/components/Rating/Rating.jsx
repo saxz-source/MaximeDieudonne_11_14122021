@@ -10,7 +10,7 @@ export default class Rating extends Component {
 
     render() {
         return (
-            <div>
+            <div className="rateRange">
                 {this.fakeArray.map((index) => {
                  return   index <= this.rating ? (
                         <img src="../assets/rateStarRed.svg" alt="" className="rateStart" key={`rate${index}+${this.rating}`}/>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Dropdown from "../../components/DropDown/Dropdown";
+import "./locationCaracs.css";
 
 export default class LocationCaracs extends Component {
     constructor(props) {
@@ -10,9 +11,17 @@ export default class LocationCaracs extends Component {
 
     render() {
         return (
-            <section>
-                <Dropdown title={"Description"} text={this.description} />
-                <Dropdown title={"Équipements"} text={this.equipments} />
+            <section className="locationCaracsSection">
+                <Dropdown
+                    title={"Description"}
+                    text={this.description}
+                    pageFrom={"location"}
+                />
+                <Dropdown
+                    title={"Équipements"}
+                    text={this.equipments}
+                    pageFrom={"location"}
+                />
             </section>
         );
     }

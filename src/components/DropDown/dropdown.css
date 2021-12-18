@@ -1,5 +1,5 @@
 .dropdownContainer {
-    width: 64rem;
+    width: 90%;
     margin-bottom: 2rem;
 }
 
@@ -13,23 +13,25 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
- 
 }
 
 .dropdownHeader h2 {
-    font-size: 1.5rem;
     color: white;
 }
 
 .dropdownContent {
-    font-size: 1.5rem;
     background-color: #f7f7f7;
     border-radius: 5px;
     padding: 1.7rem 1.125rem;
     font-weight: 400;
+    height:100%;
+}
+
+.dropDownItem {
+    font-weight: 400;
 }
 
 .dropDownArrow {
-    height : 0.9rem;
-    width : 1.5rem;
+    height: 0.9rem;
+    width: 1.5rem;
 }

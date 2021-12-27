@@ -10,13 +10,16 @@ export default class ImageBanner extends Component {
             imageUrl: props.imageUrl
                 ? `url(../assets/${props.imageUrl})`
                 : null,
+            actualPage: props.actualPage ? props.actualPage : "",
         };
     }
 
     render() {
         return (
             <div
-                className="homeBannerImage"
+                className={`homeBannerImage ${
+                    this.state.actualPage === "home" ? "home" : null
+                }`}
                 style={{ backgroundImage: this.state.imageUrl }}
             >
                 <div className="homeBannerFilter"> </div>

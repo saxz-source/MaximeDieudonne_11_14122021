@@ -20,15 +20,15 @@ export default class LocationList extends Component {
                         <Link
                             to={{
                                 pathname: `location/${location.id}`,
-                                state: { locationId : location.id },
+                                state: { locationId: location.id },
                             }}
                             key={location.id}
                         >
                             <div
                                 className="locationItem"
-                                // style={{
-                                //     backgroundImage: `url(${location.cover})`,
-                                // }}
+                                style={{
+                                    backgroundImage: `url(${location.cover})`,
+                                }}
                             >
                                 <div className="locationItemFilter"> </div>
                                 <p className="locationTitle">

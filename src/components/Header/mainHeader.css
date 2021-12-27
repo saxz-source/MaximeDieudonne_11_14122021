@@ -7,3 +7,17 @@
 .headerLogo {
     height: 4.25rem;
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+    .mainHeader {
+        padding : 1.25rem;
+    }
+
+    .headerLogo {
+        height : 2.9em;
+    }
+
+}

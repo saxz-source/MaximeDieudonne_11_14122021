@@ -1,12 +1,20 @@
 .rateStart {
-    height : 1.875;
+    height: 1.875;
     width: 1.875;
     margin-left: 0.5rem;
 }
 
 .rateRange {
-    display : flex;
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .rateStart {
+        height: 0.93rem;
+        width: 0.93rem;
+        margin: 0 0.31rem 0 0;
+    }
 }

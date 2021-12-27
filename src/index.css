@@ -31,3 +31,11 @@ a {
 main {
     padding: 5rem;
 }
+
+
+@media screen and (max-width: 768px) {
+main {
+    padding : 1.25rem
+}
+
+}

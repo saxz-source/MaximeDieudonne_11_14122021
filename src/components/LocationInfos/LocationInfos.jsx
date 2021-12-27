@@ -13,13 +13,13 @@ export default class LocationInfos extends Component {
     render() {
         return (
             <div className="locationInfos">
-                <div>
+                <div className="locationInfosFirst">
                     <h1>{this.locationPlace.title}</h1>
                     <p className="localisation">{this.locationPlace.location}</p>
                     <TagList tagList={this.locationPlace.tags} />
                 </div>
 
-                <div>
+                <div className="locationInfosSecond">
                     <div className="hostAndRating">
                         <HostPerson host={this.locationPlace.host}/>
                         <Rating rating={this.locationPlace.rating} />

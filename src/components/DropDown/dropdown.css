@@ -24,7 +24,7 @@
     border-radius: 5px;
     padding: 1.7rem 1.125rem;
     font-weight: 400;
-    height:100%;
+    height: 100%;
 }
 
 .dropDownItem {
@@ -34,4 +34,34 @@
 .dropDownArrow {
     height: 0.9rem;
     width: 1.5rem;
+}
+
+.typoFromLocation {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+.typoFromAbout {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdownContainer {
+        width: 100%;
+    }
+
+    .dropdownHeader {
+        height: 1.87rem;
+    }
+
+    .typoFromLocation {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
+
+    .typoFromAbout {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
 }

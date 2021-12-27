@@ -16,8 +16,7 @@
 .homeBannerFilter {
     width: 100%;
     height: 100%;
-    background : rgba(0, 0, 0, 0.295);
-    
+    background: rgba(0, 0, 0, 0.295);
     position: absolute;
 }
 
@@ -25,4 +24,15 @@
     color: white;
     font-size: 2.5rem;
     z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .homeBannerSentence {
+        font-size: 1.5rem;
+        padding: 0.9rem;
+    }
+
+    .home {
+        height: 7rem;
+    }
 }

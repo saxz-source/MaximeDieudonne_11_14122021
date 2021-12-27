@@ -1,6 +1,13 @@
 .locationCaracsSection {
-    display : flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap : 10%;
+    gap: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .locationCaracsSection {
+        display: flex;
+        flex-direction: column;
+    }
 }

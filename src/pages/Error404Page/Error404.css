@@ -1,6 +1,7 @@
 .errorNumber {
     text-align: center;
     font-size: 18rem;
+    font-weight: 700;
 }
 
 .errorSentence {
@@ -12,4 +13,23 @@
 .errorBackLink {
     display: block;
     text-align: center;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .errorNumber {
+        margin-top: 6.25rem;
+        font-size: 6.25rem;
+    }
+
+    .errorSentence {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 8.3rem;
+    }
+
+    .errorBackLink {
+        font-size: 0.9rem;
+        margin-bottom: 10rem;
+    }
 }

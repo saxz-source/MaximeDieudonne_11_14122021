@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./dropdown.css";
 
+/// getTypoStyle entre en conflit avec le toggle open/close sur la div content > ajouter une div <p> pour le content
+
 export default class Dropdown extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +36,15 @@ export default class Dropdown extends Component {
                     className="dropdownHeader"
                     onClick={() => this.handleOpening()}
                 >
-                    <h2 style={this.getTypoStyle()}> {this.title} </h2>
+                    <h2
+                        className={
+                            this.state.pageFrom === "location"
+                                ? "typoFromLocation"
+                                : "typoFromAbout"
+                        }
+                    >
+                        {this.title}
+                    </h2>
                     <img
                         src="../assets/arrow.svg"
                         className="dropdownArrow"
@@ -49,26 +59,36 @@ export default class Dropdown extends Component {
                 </div>
                 <div
                     className="dropdownContent"
-                    style={
-                        ({
-                            display: !this.state.open ? "none" : "block",
-                        },
-                        this.getTypoStyle())
-                    }
+                    style={{
+                        display: !this.state.open ? "none" : "block",
+                    }}
                 >
-                    {Array.isArray(this.text)
-                        ? this.text.map((item, index) => {
-                              return (
-                                  <p
-                                      key={item + index}
-                                      className="dropDownItem"
-                                      style={this.getTypoStyle()}
-                                  >
-                                      {item}
-                                  </p>
-                              );
-                          })
-                        : this.text}
+                    {Array.isArray(this.text) ? (
+                        this.text.map((item, index) => {
+                            return (
+                                <p
+                                    key={item + index}
+                                    className={`dropDownItem ${
+                                        this.state.pageFrom === "location"
+                                            ? " typoFromLocation"
+                                            : " typoFromAbout"
+                                    }`}
+                                >
+                                    {item}
+                                </p>
+                            );
+                        })
+                    ) : (
+                        <p
+                            className={`dropDownItem ${
+                                this.state.pageFrom === "location"
+                                    ? " typoFromLocation"
+                                    : " typoFromAbout"
+                            }`}
+                        >
+                            {this.text}
+                        </p>
+                    )}
                 </div>
             </section>
         );

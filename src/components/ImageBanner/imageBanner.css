@@ -11,6 +11,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 2.4rem;
+    padding:1rem;
 }
 
 .homeBannerFilter {
@@ -20,6 +21,11 @@
     position: absolute;
 }
 
+.homeBannerText {
+    display: flex;
+    flex-direction: row;
+}
+
 .homeBannerSentence {
     color: white;
     font-size: 2.5rem;
@@ -27,12 +33,23 @@
 }
 
 @media screen and (max-width: 768px) {
-    .homeBannerSentence {
-        font-size: 1.5rem;
-        padding: 0.9rem;
-    }
-
     .home {
         height: 7rem;
+    }
+
+    .homeBannerImage {
+        margin-bottom: 1.5rem;
+    }
+
+    .homeBannerText {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .homeBannerSentence {
+        font-size: 1.5rem;
+        padding: 0;
     }
 }

@@ -7,6 +7,7 @@ export default class ImageBanner extends Component {
 
         this.state = {
             text: props.text ? props.text : null,
+            text2: props.text2 ? props.text2 : null,
             imageUrl: props.imageUrl
                 ? `url(../assets/${props.imageUrl})`
                 : null,
@@ -23,7 +24,10 @@ export default class ImageBanner extends Component {
                 style={{ backgroundImage: this.state.imageUrl }}
             >
                 <div className="homeBannerFilter"> </div>
-                <p className="homeBannerSentence">{this.state.text}</p>
+                <div className="homeBannerText">
+                    <p className="homeBannerSentence">{this.state.text}</p>
+                    <p className="homeBannerSentence">{this.state.text2}</p>
+                </div>
             </div>
         );
     }

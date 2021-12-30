@@ -7,7 +7,7 @@ class HomePage extends Component {
     render() {
         return (
             <main>
-                <ImageBanner imageUrl="homeBannerImg.jpg" text="Chez-vous, partout et ailleurs" actualPage="home"/>
+                <ImageBanner imageUrl="homeBannerImg.jpg" text="Chez-vous, " text2={"partout et ailleurs"} actualPage="home"/>
                 <LocationList locationListItems={locationListItems} />
             </main>
         );

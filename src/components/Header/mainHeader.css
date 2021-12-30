@@ -1,23 +1,19 @@
 .mainHeader {
     display: flex;
     justify-content: space-between;
-    padding : 2.5rem 6.25rem 0;
+    padding: 2.5rem 6.25rem 0;
 }
 
 .headerLogo {
     height: 4.25rem;
 }
 
-
-
 @media screen and (max-width: 768px) {
-
     .mainHeader {
-        padding : 1.25rem;
+        padding: 1.25rem;
     }
 
     .headerLogo {
-        height : 2.9em;
+        height: 2.9em;
     }
-
 }

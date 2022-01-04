@@ -5,17 +5,15 @@ import "./locationList.css";
 export default class LocationList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            locationList: this.props.locationListItems
-                ? this.props.locationListItems
-                : null,
-        };
+        this.locationList = props.locationListItems
+            ? props.locationListItems
+            : null;
     }
 
     render() {
         return (
             <section className="locationList">
-                {this.state.locationList?.map((location) => {
+                {this.locationList?.map((location) => {
                     return (
                         <Link
                             to={{
@@ -32,7 +30,7 @@ export default class LocationList extends Component {
                             >
                                 <div className="locationItemFilter"> </div>
                                 <p className="locationTitle">
-                                    {location.title}
+                                    {location.title ?? "Titre inconnu"}
                                 </p>
                             </div>
                         </Link>

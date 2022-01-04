@@ -4,8 +4,8 @@ import "./gallery.css";
 export default class Gallery extends Component {
     constructor(props) {
         super(props);
-        this.pictures = this.props.pictures;
-        this.length = this.props.pictures.length;
+        this.pictures = props.pictures;
+        this.length = props.pictures.length;
         this.state = {
             displayedPicture: 0,
         };

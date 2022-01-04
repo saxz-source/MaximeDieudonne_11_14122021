@@ -2,27 +2,56 @@ import React, { Component } from "react";
 import Gallery from "../../components/Gallery/Gallery";
 import LocationInfos from "../../components/LocationInfos/LocationInfos";
 import LocationCaracs from "./LocationCaracs";
-const locationListItems = require("../../data/locationList.json");
+import { getLocationItem } from "../../data/getDatas";
+import Loader from "../../components/Loader/Loader";
 
 export default class LocationPage extends Component {
     constructor(props) {
         super(props);
-        this.locationPlace = locationListItems.filter(
-            (l) => l.id === window.location.pathname.split("/")[2]
-        )[0];
+        this.state = {
+            locationPlace: null,
+            isLoading: true,
+            error: false,
+        };
+        this.locationId = "";
     }
 
     componentDidMount() {
-        console.log(this.locationPlace);
-
+        const locationId = window.location.pathname.split("/")[2];
+        getLocationItem(locationId)
+            .then((item) => {
+                this.setState({
+                    locationPlace: item,
+                    isLoading: false,
+                });
+            })
+            .catch((err) => {
+                this.setState({
+                    error: true,
+                });
+            });
     }
 
     render() {
         return (
             <main>
-                <Gallery pictures={this.locationPlace.pictures} imgAlt={ `Photographie de la location ${this.locationPlace.title}`   } />
-                <LocationInfos locationPlace={this.locationPlace} />
-                <LocationCaracs equipments={this.locationPlace.equipments} description={this.locationPlace.description} />
+                {this.state.isLoading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <Gallery
+                            pictures={this.state.locationPlace.pictures}
+                            imgAlt={`Photographie de la location ${this.state.locationPlace.title}`}
+                        />
+                        <LocationInfos
+                            locationPlace={this.state.locationPlace}
+                        />
+                        <LocationCaracs
+                            equipments={this.state.locationPlace.equipments}
+                            description={this.state.locationPlace.description}
+                        />
+                    </>
+                )}
             </main>
         );
     }

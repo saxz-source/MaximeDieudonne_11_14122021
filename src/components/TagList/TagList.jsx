@@ -5,7 +5,7 @@ import './tag.css'
 export default class TagList extends Component {
     constructor(props) {
         super(props);
-        this.tagList = this.props.tagList;
+        this.tagList = props.tagList;
     }
 
     render() {

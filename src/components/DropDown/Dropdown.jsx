@@ -8,7 +8,8 @@ export default class Dropdown extends Component {
         super(props);
         this.text = props.text;
         this.title = props.title;
-        this.state = { open: false, pageFrom: props.pageFrom };
+        this.actualPage = props.pageFrom
+        this.state = { open: false};
     }
 
     /**
@@ -17,16 +18,6 @@ export default class Dropdown extends Component {
      */
     handleOpening() {
         this.setState({ open: !this.state.open });
-    }
-
-    /**
-     * Define the style for the element according to the page they're shown
-     * @returns {{fontSize: string, lineHeight : string}}
-     */
-    getTypoStyle() {
-        return this.state.pageFrom === "location"
-            ? { fontSize: "1.1rem", lineHeight: "1.6rem" }
-            : { fontSize: "1.5rem", lineHeight: "2.2rem" };
     }
 
     render() {
@@ -38,7 +29,7 @@ export default class Dropdown extends Component {
                 >
                     <h2
                         className={
-                            this.state.pageFrom === "location"
+                            this.actualPage === "location"
                                 ? "typoFromLocation"
                                 : "typoFromAbout"
                         }
@@ -69,7 +60,7 @@ export default class Dropdown extends Component {
                                 <p
                                     key={item + index}
                                     className={`dropDownItem ${
-                                        this.state.pageFrom === "location"
+                                        this.actualPage === "location"
                                             ? " typoFromLocation"
                                             : " typoFromAbout"
                                     }`}
@@ -81,7 +72,7 @@ export default class Dropdown extends Component {
                     ) : (
                         <p
                             className={`dropDownItem ${
-                                this.state.pageFrom === "location"
+                                this.actualPage === "location"
                                     ? " typoFromLocation"
                                     : " typoFromAbout"
                             }`}

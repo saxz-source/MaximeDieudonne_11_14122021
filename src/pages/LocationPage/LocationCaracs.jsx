@@ -5,8 +5,8 @@ import "./locationCaracs.css";
 export default class LocationCaracs extends Component {
     constructor(props) {
         super(props);
-        this.equipments = this.props.equipments;
-        this.description = this.props.description;
+        this.equipments = props.equipments;
+        this.description = props.description;
     }
 
     render() {
@@ -14,12 +14,12 @@ export default class LocationCaracs extends Component {
             <section className="locationCaracsSection">
                 <Dropdown
                     title={"Description"}
-                    text={this.description}
+                    text={this.description ?? "Description non répertoriée"}
                     pageFrom={"location"}
                 />
                 <Dropdown
                     title={"Équipements"}
-                    text={this.equipments}
+                    text={this.equipments ?? "Equipements non répertoriés"}
                     pageFrom={"location"}
                 />
             </section>

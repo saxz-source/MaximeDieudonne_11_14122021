@@ -6,7 +6,6 @@ import "./aboutPage.css";
 export default class AboutPage extends Component {
     constructor() {
         super();
-
         this.dropDown_list = [
             {
                 title: "Fiabilité",
@@ -27,15 +26,19 @@ export default class AboutPage extends Component {
         ];
     }
 
-    handleOpening(dd) {}
-
     render() {
         return (
             <main>
                 <ImageBanner imageUrl="aboutBannerImg.jpg" />
                 <section className="aboutItemsSection">
                     {this.dropDown_list.map((dd, index) => {
-                        return <Dropdown text={dd.text} title={dd.title} key={index + dd.title} />;
+                        return (
+                            <Dropdown
+                                text={dd.text}
+                                title={dd.title}
+                                key={index + dd.title}
+                            />
+                        );
                     })}
                 </section>
             </main>

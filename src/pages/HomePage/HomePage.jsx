@@ -3,6 +3,7 @@ import ImageBanner from "../../components/ImageBanner/ImageBanner";
 import LocationList from "../../components/LocationList/LocationList";
 import { getLocationList } from "../../data/getDatas";
 import Loader from "../../components/Loader/Loader";
+import LoadingError from "../../components/Errors/LoadingError";
 
 class HomePage extends Component {
     constructor() {
@@ -15,17 +16,31 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
+        // Fetch the location list
         getLocationList()
             .then((locationList) => {
+                setTimeout(this.justWait, 1000, locationList);
+            })
+            .catch(() => {
                 this.setState({
-                    locationListItems: locationList,
+                    error: true,
                     isLoading: false,
                 });
-            })
-            .catch((err) => {
-                this.setState({ error: true });
             });
     }
+
+    /**
+     * Just simulate a fetch Time
+     * @param {any{}[]} locationList the whole location list
+     * @returns {void} 
+     */
+    justWait = (locationList) => {
+        this.setState({
+            locationListItems: locationList,
+            isLoading: false,
+        });
+        return;
+    };
 
     render() {
         return (
@@ -36,9 +51,9 @@ class HomePage extends Component {
                     text2={"partout et ailleurs"}
                     actualPage="home"
                 />
-                {this.state.isLoading ? (
-                    <Loader />
-                ) : (
+                {this.state.isLoading && <Loader />}
+                {this.state.error && <LoadingError />}
+                {this.state.locationListItems && (
                     <LocationList
                         locationListItems={this.state.locationListItems}
                     />

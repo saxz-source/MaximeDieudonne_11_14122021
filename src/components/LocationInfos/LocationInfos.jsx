@@ -4,7 +4,13 @@ import TagList from "../TagList/TagList";
 import Rating from "../Rating/Rating";
 import "./locationInfos.css";
 
+/** The template of the location informations in the location place page */
 export default class LocationInfos extends Component {
+    /**
+     * Build the template  of the location informations in the location place page
+     * @param {*} props 
+     * @param {{}} props.locationPlace The location place object
+     */
     constructor(props) {
         super(props);
         this.locationPlace = props.locationPlace;

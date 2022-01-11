@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import "./gallery.css";
 
+/** The galerry componenent displayed in the location place page */
 export default class Gallery extends Component {
+    /**
+     * Create the gallery
+     * @param {*} props props for the Gallery Component
+     * @param  {string[]} props.pictures The array of pictures related to the location
+     */
     constructor(props) {
         super(props);
         this.pictures = props.pictures;
@@ -11,26 +17,26 @@ export default class Gallery extends Component {
         };
     }
 
+    /**
+     * Handle the click on an arrow to change the image in the gallery
+     * @param {string} direction plus | less
+     * @returns {void}
+     */
     handleClick(direction) {
         switch (direction) {
             case "plus":
-                this.state.displayedPicture === this.length -1
+                this.state.displayedPicture === this.length - 1
                     ? this.setState({ displayedPicture: 0 })
                     : this.setState({
                           displayedPicture: this.state.displayedPicture + 1,
                       });
-                console.log(this.state.displayedPicture);
-
                 break;
             case "less":
                 this.state.displayedPicture === 0
-                    ? this.setState({ displayedPicture: this.length -1 })
+                    ? this.setState({ displayedPicture: this.length - 1 })
                     : this.setState({
                           displayedPicture: this.state.displayedPicture - 1,
                       });
-
-                console.log(this.state.displayedPicture);
-
                 break;
             default:
                 return;

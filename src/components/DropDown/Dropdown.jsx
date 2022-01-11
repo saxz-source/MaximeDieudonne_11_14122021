@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import "./dropdown.css";
 
-/// getTypoStyle entre en conflit avec le toggle open/close sur la div content > ajouter une div <p> pour le content
-
+/** A DropDown Component */
 export default class Dropdown extends Component {
+    /**
+     * Create a dropdown
+     * @param {*} props props of the component
+     * @param {string | string[]} props.text The text inside the dropDown
+     * @param {string} props.title The title
+     * @param {string} props.actualPage The page where the dropdown is displayed, useful for css properties
+     */
     constructor(props) {
         super(props);
         this.text = props.text;
         this.title = props.title;
-        this.actualPage = props.pageFrom
-        this.state = { open: false};
+        this.actualPage = props.pageFrom;
+        this.state = { open: false };
     }
 
     /**
@@ -18,6 +24,7 @@ export default class Dropdown extends Component {
      */
     handleOpening() {
         this.setState({ open: !this.state.open });
+        return;
     }
 
     render() {

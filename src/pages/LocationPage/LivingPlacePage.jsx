@@ -4,10 +4,11 @@ import LocationInfos from "../../components/LocationInfos/LocationInfos";
 import LocationCaracs from "./LocationCaracs";
 import { getLocationItem } from "../../data/getDatas";
 import Loader from "../../components/Loader/Loader";
+import LoadingError from "../../components/Errors/LoadingError";
 
 export default class LocationPage extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             locationPlace: null,
             isLoading: true,
@@ -17,13 +18,12 @@ export default class LocationPage extends Component {
     }
 
     componentDidMount() {
+        // get location id from url params
         const locationId = window.location.pathname.split("/")[2];
+        // fetch the corresponding item
         getLocationItem(locationId)
             .then((item) => {
-                this.setState({
-                    locationPlace: item,
-                    isLoading: false,
-                });
+                setTimeout(this.justWait, 1000, item);
             })
             .catch((err) => {
                 this.setState({
@@ -32,12 +32,25 @@ export default class LocationPage extends Component {
             });
     }
 
+    /**
+     * Just simulate a fetch time
+     * @param {any{}} item the location item object
+     * @returns {void}
+     */
+    justWait = (item) => {
+        this.setState({
+            locationPlace: item,
+            isLoading: false,
+        });
+        return;
+    };
+
     render() {
         return (
             <main>
-                {this.state.isLoading ? (
-                    <Loader />
-                ) : (
+                {this.state.isLoading && <Loader />}
+                {this.state.error && <LoadingError />}
+                {this.state.locationPlace && (
                     <>
                         <Gallery
                             pictures={this.state.locationPlace.pictures}

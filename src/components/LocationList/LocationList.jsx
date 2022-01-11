@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./locationList.css";
 
+
+/** The template of the location list on the main page */
 export default class LocationList extends Component {
+
+    /**
+     * Build the location list on main page
+     * @param {*} props 
+     * @param {[]} props.locationListItems The array of all location place items
+     */
     constructor(props) {
         super(props);
         this.locationList = props.locationListItems

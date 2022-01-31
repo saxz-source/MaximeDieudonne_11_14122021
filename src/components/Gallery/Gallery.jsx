@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./gallery.css";
 
-/** The galerry componenent displayed in the location place page */
+/** The gallery componenent displayed in the location place page */
 export default class Gallery extends Component {
     /**
      * Create the gallery

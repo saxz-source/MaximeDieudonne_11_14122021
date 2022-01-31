@@ -29,7 +29,17 @@ export default class LocationPage extends Component {
                 this.setState({
                     error: true,
                 });
+                this.redirectTo404();
             });
+    }
+
+    /**
+     * Redirect to page 404
+     * @returns {void}
+     */
+    redirectTo404() {
+        window.location.href = "http://localhost:3000/404";
+        return;
     }
 
     /**

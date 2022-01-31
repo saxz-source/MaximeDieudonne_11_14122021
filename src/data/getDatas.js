@@ -21,7 +21,7 @@ export const getLocationItem = (locationId) => {
 export const getLocationList = () => {
     return new Promise((resolve, reject) => {
         locationList
-            ?   resolve(locationList)
+            ? resolve(locationList)
             : reject("location list not found");
     });
 };
